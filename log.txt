@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2025-04-10 22:36:06,362] INFO: Scheduler started
 [2025-04-10 22:36:06,362] INFO: Application started
 [2025-04-10 22:36:06,450] INFO: 🔄 Парсинг запущен...
@@ -5,3 +6,6 @@
 [2025-04-10 22:36:16,580] INFO: Application is stopping. This might take a moment.
 [2025-04-10 22:36:16,581] INFO: Scheduler has been shut down
 [2025-04-10 22:36:16,581] INFO: Application.stop() complete
+=======
+[2025-04-10 20:26:25,138] INFO: 🔄 Бот запущен. Ожидаем изменения supply с сайта...
+>>>>>>> 08ec02067479e1f8b73505040b73d139d17344ce
