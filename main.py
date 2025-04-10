@@ -172,17 +172,20 @@ async def main():
     app = Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("report", report_command))
 
-    loop_task = asyncio.create_task(main_loop(bot, stop_event))
     await app.initialize()
     await app.start()
     await app.updater.start_polling()
 
-    await stop_event.wait()
+    # запускаем main_loop параллельно
+    try:
+        await main_loop(bot, stop_event)
+    except asyncio.CancelledError:
+        pass
+    finally:
+        await app.updater.stop()
+        await app.stop()
+        await app.shutdown()
 
-    await app.updater.stop()
-    await app.stop()
-    await app.shutdown()
-    loop_task.cancel()
 
 if __name__ == '__main__':
     asyncio.run(main())
